@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transition to Hands-On</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../../shared/theme.css">
+</head>
+<body data-page="next-steps">
+  <div class="page-shell">
+    <header class="hero hero-band">
+      <div class="page-header">
+        <div>
+          <a class="back-link" href="../../index.html">&larr; Back to presenter home</a>
+          <p class="eyebrow">Section 07</p>
+          <h1>Close the overview and hand off to the lab</h1>
+        </div>
+        <div class="status-card">
+          <div class="micro-label">Target timing</div>
+          <h2>3 to 4 minutes</h2>
+          <p>Goal: summarize the platform and make the hands-on exercise feel like the natural next step.</p>
+        </div>
+      </div>
+      <p class="lead">The audience should finish this section feeling that they have seen the platform map and are ready to try a simple grounded-agent workflow themselves.</p>
+    </header>
+
+    <main class="stack">
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Summary</p>
+            <h2>What they should remember</h2>
+          </div>
+        </div>
+        <div class="section-grid">
+          <article class="feature-card">
+            <h3>Foundry covers the lifecycle</h3>
+            <p>Creation, grounding, tools, safety, tracing, and evaluation belong to one operating model.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Agents are practical, not abstract</h3>
+            <p>The audience has now seen how an agent can be defined, tested, and improved inside the same platform.</p>
+          </article>
+          <article class="feature-card">
+            <h3>The exercise is intentionally basic</h3>
+            <p>The hands-on portion should reinforce confidence, not maximize complexity.</p>
+          </article>
+          <article class="feature-card">
+            <h3>AI Search grounding is the right next move</h3>
+            <p>It gives a concrete and understandable scenario for first-time users: answer questions from files they control.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="dual-panel">
+        <article class="script-card">
+          <p class="section-kicker">Talking points</p>
+          <h2>Speaker bullets</h2>
+          <ul class="bullet-list">
+            <li>You have seen the platform map and the main agent lifecycle.</li>
+            <li>The next step is to make it concrete with a simple grounded agent pattern.</li>
+            <li>We are moving into an exercise that uses files in AI Search so the grounding behavior is tangible.</li>
+          </ul>
+        </article>
+        <article class="script-card">
+          <p class="section-kicker">Short script</p>
+          <h2>Presenter-ready wording</h2>
+          <p>At this point, you have seen the core Foundry story: create an agent, connect it to what matters, place controls around it, and inspect how it behaves. Rather than ending on architecture, I want to turn that into a simple exercise. The hands-on section uses a basic AI Search grounding scenario so you can see how quickly a useful first agent comes together.</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Transition</p>
+            <h2>What to do next</h2>
+          </div>
+        </div>
+        <article class="switch-card">
+          <ul class="plain-list">
+            <li>Close the overview pages and move into the exercise materials or live setup.</li>
+            <li>Explain that the exercise will stay intentionally narrow: answer questions grounded in files.</li>
+            <li>Use that scenario to reinforce the platform concepts they just saw.</li>
+          </ul>
+        </article>
+      </section>
+
+      <nav class="section-nav">
+        <a class="nav-link" href="../06-traces-evals/index.html">06 Traces and evals</a>
+        <a class="nav-link current" href="index.html">07 Next steps</a>
+        <a class="nav-link" href="../../index.html">Presenter home</a>
+      </nav>
+    </main>
+  </div>
+  <script src="../../shared/presentation.js"></script>
+</body>
+</html>

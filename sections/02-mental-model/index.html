@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundry Mental Model</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../../shared/theme.css">
+</head>
+<body data-page="mental-model">
+  <div class="page-shell">
+    <header class="hero hero-band">
+      <div class="page-header">
+        <div>
+          <a class="back-link" href="../../index.html">&larr; Back to presenter home</a>
+          <p class="eyebrow">Section 02</p>
+          <h1>The Foundry mental model in one page</h1>
+        </div>
+        <div class="status-card">
+          <div class="micro-label">Target timing</div>
+          <h2>4 minutes</h2>
+          <p>Goal: give the audience a structure so the UI feels obvious instead of crowded.</p>
+        </div>
+      </div>
+      <p class="lead">Explain Foundry as a lifecycle: define an agent, connect it to data and actions, protect it with controls, then observe and improve it.</p>
+    </header>
+
+    <main class="stack">
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Core map</p>
+            <h2>What each surface does</h2>
+          </div>
+        </div>
+        <div class="section-grid">
+          <article class="feature-card">
+            <h3>Agent</h3>
+            <p>The agent is the operating behavior: instructions, model choice, tool access, and grounded knowledge working together.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Models</h3>
+            <p>Models provide reasoning and generation. For this audience, present them as the engine, not the whole vehicle.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Knowledge and data</h3>
+            <p>This is where the agent stops being generic. Grounding lets it answer with enterprise context instead of just general training data.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Tools</h3>
+            <p>Tools let the agent do work, not just talk. Use this section to separate “knows about” from “can act on.”</p>
+          </article>
+          <article class="feature-card">
+            <h3>Guardrails</h3>
+            <p>Guardrails are the control layer: content safety, boundaries, and operational confidence.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Traces and evaluation</h3>
+            <p>These answer the enterprise question: how do we know what happened and how do we improve it?</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="dual-panel">
+        <article class="script-card">
+          <p class="section-kicker">Talking points</p>
+          <h2>Speaker bullets</h2>
+          <ul class="bullet-list">
+            <li>An agent is the composition layer, not just a prompt.</li>
+            <li>Models provide capability, knowledge provides relevance, tools provide action.</li>
+            <li>Guardrails, traces, and evaluation are what make the platform operationally serious.</li>
+            <li>The UI navigation mirrors this lifecycle.</li>
+          </ul>
+        </article>
+        <article class="script-card">
+          <p class="section-kicker">Short script</p>
+          <h2>Presenter-ready wording</h2>
+          <p>One of the easiest ways to get lost in an AI platform is to treat every menu item as separate. Instead, think of Foundry as a workflow. You define an agent, give it a model, connect it to knowledge and tools, place guardrails around it, and then inspect and evaluate what it does. Once the audience sees that lifecycle, the UI becomes much easier to follow.</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Live switch</p>
+            <h2>What to show next in Foundry</h2>
+          </div>
+        </div>
+        <article class="switch-card">
+          <h3>Primary transition</h3>
+          <ul class="plain-list">
+            <li>Open an agent and point to Playground, Traces, Monitor, and Evaluation as the lifecycle inside one agent.</li>
+            <li>Use the left navigation to show that knowledge, tools, and guardrails are first-class parts of the platform.</li>
+            <li>Tell the audience the next step is to actually create or edit an agent.</li>
+          </ul>
+        </article>
+      </section>
+
+      <nav class="section-nav">
+        <a class="nav-link" href="../01-intro/index.html">01 Intro</a>
+        <a class="nav-link current" href="index.html">02 Mental model</a>
+        <a class="nav-link" href="../03-agent-creation/index.html">03 Agent creation</a>
+      </nav>
+    </main>
+  </div>
+  <script src="../../shared/presentation.js"></script>
+</body>
+</html>

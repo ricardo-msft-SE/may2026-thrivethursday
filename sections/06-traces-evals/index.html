@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traces and Evaluation</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../../shared/theme.css">
+</head>
+<body data-page="traces-evals">
+  <div class="page-shell">
+    <header class="hero hero-band">
+      <div class="page-header">
+        <div>
+          <a class="back-link" href="../../index.html">&larr; Back to presenter home</a>
+          <p class="eyebrow">Section 06</p>
+          <h1>Make observability part of the value story</h1>
+        </div>
+        <div class="status-card">
+          <div class="micro-label">Target timing</div>
+          <h2>5 to 6 minutes</h2>
+          <p>Goal: show that teams can inspect behavior and improve quality intentionally.</p>
+        </div>
+      </div>
+      <p class="lead">This is the enterprise credibility section. It shows that an agent is not a black box once it is deployed.</p>
+    </header>
+
+    <main class="stack">
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Two layers</p>
+            <h2>Traces explain. Evaluation measures.</h2>
+          </div>
+        </div>
+        <div class="section-grid">
+          <article class="feature-card">
+            <h3>Traces</h3>
+            <p>Use traces to answer: what happened on this run, what tool was called, and where did the answer come from?</p>
+          </article>
+          <article class="feature-card">
+            <h3>Evaluation</h3>
+            <p>Use evaluation to answer: is the agent producing results that are accurate, useful, and improving over time?</p>
+          </article>
+          <article class="feature-card">
+            <h3>Operational loop</h3>
+            <p>The strong story here is observe, adjust, and rerun. Avoid discussing evaluation as a one-time checkbox.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Demo risk mitigation</h3>
+            <p>Have at least one known-good trace and one prepared evaluation artifact before the talk starts.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="dual-panel">
+        <article class="script-card">
+          <p class="section-kicker">Talking points</p>
+          <h2>Speaker bullets</h2>
+          <ul class="bullet-list">
+            <li>Traces are for understanding behavior at the run level.</li>
+            <li>Evaluation is for understanding quality at the pattern level.</li>
+            <li>This is how teams move from demo success to operational confidence.</li>
+          </ul>
+        </article>
+        <article class="script-card">
+          <p class="section-kicker">Short script</p>
+          <h2>Presenter-ready wording</h2>
+          <p>The part of the platform that tends to win over serious teams is not the first answer. It is what happens after that answer. Can I inspect the run? Can I see how the response was assembled? Can I evaluate behavior over time instead of relying on intuition? Traces and evaluation are the bridge from experimentation to disciplined improvement.</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Live switch</p>
+            <h2>What to show in the UI</h2>
+          </div>
+        </div>
+        <article class="switch-card">
+          <ul class="plain-list">
+            <li>Open Traces and walk through one clear example.</li>
+            <li>Show Evaluation at a high level and emphasize improvement loops rather than test-case mechanics.</li>
+            <li>If the live artifact is noisy, fall back to the principle: traces explain why, evaluation shows whether it is getting better.</li>
+          </ul>
+        </article>
+      </section>
+
+      <nav class="section-nav">
+        <a class="nav-link" href="../05-guardrails/index.html">05 Guardrails</a>
+        <a class="nav-link current" href="index.html">06 Traces and evals</a>
+        <a class="nav-link" href="../07-next-steps/index.html">07 Next steps</a>
+      </nav>
+    </main>
+  </div>
+  <script src="../../shared/presentation.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft Foundry Demo Guide</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="shared/theme.css">
+</head>
+<body data-page="home">
+  <div class="page-shell">
+    <header class="hero">
+      <div class="eyebrow">Microsoft Foundry Demo Control Surface</div>
+      <div class="hero-grid">
+        <div>
+          <h1>First-introduction walkthrough for Microsoft Foundry</h1>
+          <p class="lead">
+            Use these pages to frame each concept, then switch into the Foundry UI to show the same concept live.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="sections/01-intro/index.html">Start presentation</a>
+            <a class="button secondary" href="docs/talking-points.md">Open talking points</a>
+          </div>
+        </div>
+        <aside class="status-card">
+          <h2>Session profile</h2>
+          <ul class="meta-list">
+            <li><strong>Audience:</strong> mixed customer audience</li>
+            <li><strong>Format:</strong> interactive HTML + live Foundry UI</li>
+            <li><strong>Length:</strong> 30 to 40 minutes</li>
+            <li><strong>Hands-on:</strong> second half transitions to AI Search-based agent exercise</li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <main class="content-grid">
+      <section class="panel agenda-panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Agenda</p>
+            <h2>Recommended flow</h2>
+          </div>
+          <div class="progress-pill">7 of 7 outlined</div>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item active">
+            <div class="timeline-marker">01</div>
+            <div>
+              <h3><a href="sections/01-intro/index.html">Foundry value story</a></h3>
+              <p>Set the platform context, audience expectation, and transition into the live UI.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker">02</div>
+            <div>
+              <h3><a href="sections/02-mental-model/index.html">Mental model</a></h3>
+              <p>Explain how agents, models, tools, knowledge, guardrails, and evaluation fit together.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker">03</div>
+            <div>
+              <h3><a href="sections/03-agent-creation/index.html">Build an agent</a></h3>
+              <p>Set up the live creation sequence in the Agents experience.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker">04</div>
+            <div>
+              <h3><a href="sections/04-knowledge-tools/index.html">Knowledge and tools</a></h3>
+              <p>Frame grounding and action-taking before showing each live.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker">05</div>
+            <div>
+              <h3><a href="sections/05-guardrails/index.html">Guardrails</a></h3>
+              <p>Show safety controls and answer why enterprises care.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker">06</div>
+            <div>
+              <h3><a href="sections/06-traces-evals/index.html">Traces and evaluation</a></h3>
+              <p>Explain how teams inspect behavior and improve agent quality.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker">07</div>
+            <div>
+              <h3><a href="sections/07-next-steps/index.html">Transition to hands-on lab</a></h3>
+              <p>Bridge from overview into the AI Search file-grounding exercise.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel callout-panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Live demo choreography</p>
+            <h2>Switch points</h2>
+          </div>
+        </div>
+        <div class="cue-stack">
+          <div class="cue-card cue-live">
+            <h3>Explain, then show</h3>
+            <p>Each section page should end with one specific move into the Foundry UI so the audience maps concept to product surface.</p>
+          </div>
+          <div class="cue-card cue-risk">
+            <h3>Pre-stage artifacts</h3>
+            <p>Have one ready agent, one tool, one knowledge source, and one trace or evaluation result before the talk starts.</p>
+          </div>
+          <div class="cue-card cue-next">
+            <h3>Fastest next build</h3>
+            <p>Use this landing page as the presenter dashboard while you refine timings, live cues, and the hands-on exercise materials.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="shared/presentation.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundry Value Story</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../../shared/theme.css">
+</head>
+<body data-page="intro">
+  <div class="page-shell">
+    <header class="hero hero-band">
+      <div class="page-header">
+        <div>
+          <a class="back-link" href="../../index.html">&larr; Back to presenter home</a>
+          <p class="eyebrow">Section 01</p>
+          <h1>Why Foundry matters before we touch the UI</h1>
+        </div>
+        <div class="status-card">
+          <div class="micro-label">Target timing</div>
+          <h2>3 to 4 minutes</h2>
+          <p>Goal: align the audience on what Foundry is and what they are about to see live.</p>
+        </div>
+      </div>
+      <p class="lead">
+        Microsoft Foundry gives teams one place to build, ground, observe, and improve AI agents without forcing them to stitch together disconnected services by hand.
+      </p>
+      <div class="chip-row">
+        <div class="chip">Agents</div>
+        <div class="chip">Models</div>
+        <div class="chip">Knowledge</div>
+        <div class="chip">Tools</div>
+        <div class="chip">Guardrails</div>
+        <div class="chip">Evaluation</div>
+      </div>
+    </header>
+
+    <main class="stack">
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">What to say</p>
+            <h2>Audience framing</h2>
+          </div>
+        </div>
+        <div class="section-grid">
+          <article class="feature-card">
+            <h3>Foundry is not just model access</h3>
+            <p>
+              Position it as the place where teams move from raw model capability to real agent behavior with knowledge, tools, safety, and evaluation.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>Show the lifecycle, not a single prompt</h3>
+            <p>
+              The audience should leave understanding that agent creation is only one part of the story. The platform also covers grounding, observation, and iteration.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>Keep the first half platform-centric</h3>
+            <p>
+              Avoid dropping into one narrow business scenario too early. First build the mental model so the later hands-on exercise makes sense.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>Use the UI as proof</h3>
+            <p>
+              Each live switch should confirm a concept the audience has already heard, rather than introducing a concept and interface at the same time.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Narrative spine</p>
+            <h2>Three promises to make up front</h2>
+          </div>
+        </div>
+        <div class="section-grid">
+          <article class="step-card" data-step="01">
+            <h3>Build</h3>
+            <p>
+              You can create a working agent quickly, define its role, and start testing it in the same product surface.
+            </p>
+          </article>
+          <article class="step-card" data-step="02">
+            <h3>Ground</h3>
+            <p>
+              You can connect the agent to trusted enterprise knowledge and tools so it answers with context and can take action.
+            </p>
+          </article>
+          <article class="step-card" data-step="03">
+            <h3>Improve</h3>
+            <p>
+              You can inspect traces, evaluate outcomes, and refine the agent instead of treating it like a black box.
+            </p>
+          </article>
+          <article class="step-card" data-step="04">
+            <h3>Operationalize</h3>
+            <p>
+              The end state is not a clever demo prompt. It is an agent that teams can observe, govern, and evolve.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="dual-panel">
+        <article class="script-card">
+          <p class="section-kicker">Talking points</p>
+          <h2>Speaker bullets</h2>
+          <ul class="bullet-list">
+            <li>Foundry is the workspace where models become usable enterprise agents.</li>
+            <li>Today I’ll show the full loop: create, connect, test, observe, and improve.</li>
+            <li>The first half is platform overview; the second half shifts into a basic hands-on AI Search exercise.</li>
+            <li>As we move through the UI, map each screen to one of those jobs.</li>
+          </ul>
+        </article>
+        <article class="script-card">
+          <p class="section-kicker">Short script</p>
+          <h2>Presenter-ready wording</h2>
+          <p>
+            When people first hear about Foundry, they often think of it as a place to access models. That is part of the story, but not the interesting part. The interesting part is that Foundry brings together the pieces required to turn a model into an agent your team can actually trust and improve. In the next few minutes I’ll show you how the platform supports that full lifecycle, and then I’ll switch into the UI to prove each piece live.
+          </p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Live switch</p>
+            <h2>What to show next in Foundry</h2>
+          </div>
+        </div>
+        <div class="dual-panel">
+          <article class="switch-card">
+            <h3>Primary transition</h3>
+            <p>
+              Move into the Foundry UI and orient the audience: point to the left navigation and the agent workspace tabs so they can see that the platform covers more than chat.
+            </p>
+            <ul class="plain-list">
+              <li>Left nav: Agents, Models, Tools, Knowledge, Data, Evaluations, Guardrails</li>
+              <li>Agent workspace: Playground, Traces, Monitor, Evaluation</li>
+              <li>Explain that these are the surfaces you will connect back to throughout the session</li>
+            </ul>
+          </article>
+          <article class="switch-card">
+            <h3>Fallback line</h3>
+            <p>
+              If the UI is slow, stay on this page and say: “Even if we pause the live environment for a moment, the key point is that Foundry is organized around the full agent lifecycle, not a single prompt window.”
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="note-bar">
+        <div>
+          <div class="micro-label">Presenter note</div>
+          <p>
+            Do not start with setup steps. Start with the audience mental model, then use the UI to reinforce it.
+          </p>
+        </div>
+      </section>
+
+      <nav class="section-nav">
+        <a class="nav-link current" href="index.html">01 Intro</a>
+        <a class="nav-link" href="../../index.html">Back to home</a>
+      </nav>
+    </main>
+  </div>
+  <script src="../../shared/presentation.js"></script>
+</body>
+</html>

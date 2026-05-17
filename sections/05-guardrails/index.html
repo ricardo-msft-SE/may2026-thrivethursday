@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardrails</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../../shared/theme.css">
+</head>
+<body data-page="guardrails">
+  <div class="page-shell">
+    <header class="hero hero-band">
+      <div class="page-header">
+        <div>
+          <a class="back-link" href="../../index.html">&larr; Back to presenter home</a>
+          <p class="eyebrow">Section 05</p>
+          <h1>Show safety without turning the talk into governance training</h1>
+        </div>
+        <div class="status-card">
+          <div class="micro-label">Target timing</div>
+          <h2>3 minutes</h2>
+          <p>Goal: answer the enterprise trust question, then move on.</p>
+        </div>
+      </div>
+      <p class="lead">This section is about confidence and control, not deep policy configuration.</p>
+    </header>
+
+    <main class="stack">
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Why it matters</p>
+            <h2>Three business answers</h2>
+          </div>
+        </div>
+        <div class="section-grid">
+          <article class="feature-card">
+            <h3>Boundaries</h3>
+            <p>Guardrails help teams define where the agent should stay and where it should stop.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Safety</h3>
+            <p>Use this to answer the question: what prevents unsafe or off-policy responses?</p>
+          </article>
+          <article class="feature-card">
+            <h3>Confidence</h3>
+            <p>Executives and architects both want to know the platform has built-in controls, not just a clever demo.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="dual-panel">
+        <article class="script-card">
+          <p class="section-kicker">Talking points</p>
+          <h2>Speaker bullets</h2>
+          <ul class="bullet-list">
+            <li>Most customers ask about control almost as quickly as they ask about capability.</li>
+            <li>Guardrails are part of the design, not an afterthought.</li>
+            <li>For this intro, the message is that safe operation is a platform concern, not just a prompt-writing trick.</li>
+          </ul>
+        </article>
+        <article class="script-card">
+          <p class="section-kicker">Short script</p>
+          <h2>Presenter-ready wording</h2>
+          <p>Whenever we talk about AI agents with customers, the conversation quickly shifts from what the system can do to how it can be controlled. Foundry treats that as a platform-level concern. For today, I do not need to dive into every configuration detail. I just want you to see that safety and control are built into the operating model.</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Live switch</p>
+            <h2>What to show in the UI</h2>
+          </div>
+        </div>
+        <article class="switch-card">
+          <ul class="plain-list">
+            <li>Open Guardrails and point out the control surface at a high level.</li>
+            <li>Keep the explanation to one or two examples, then move forward.</li>
+            <li>Tell the audience the next question is not “can we control it?” but “how do we inspect and improve it?”</li>
+          </ul>
+        </article>
+      </section>
+
+      <nav class="section-nav">
+        <a class="nav-link" href="../04-knowledge-tools/index.html">04 Knowledge and tools</a>
+        <a class="nav-link current" href="index.html">05 Guardrails</a>
+        <a class="nav-link" href="../06-traces-evals/index.html">06 Traces and evals</a>
+      </nav>
+    </main>
+  </div>
+  <script src="../../shared/presentation.js"></script>
+</body>
+</html>

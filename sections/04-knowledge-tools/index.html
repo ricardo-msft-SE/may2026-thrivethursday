@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowledge and Tools</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../../shared/theme.css">
+</head>
+<body data-page="knowledge-tools">
+  <div class="page-shell">
+    <header class="hero hero-band">
+      <div class="page-header">
+        <div>
+          <a class="back-link" href="../../index.html">&larr; Back to presenter home</a>
+          <p class="eyebrow">Section 04</p>
+          <h1>Ground the agent and let it act</h1>
+        </div>
+        <div class="status-card">
+          <div class="micro-label">Target timing</div>
+          <h2>5 to 6 minutes</h2>
+          <p>Goal: make the difference between knowledge and tools feel obvious.</p>
+        </div>
+      </div>
+      <p class="lead">This is the section where the audience should start seeing why an agent is more than a chat interface.</p>
+    </header>
+
+    <main class="stack">
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Simple distinction</p>
+            <h2>Knowledge answers. Tools act.</h2>
+          </div>
+        </div>
+        <div class="section-grid">
+          <article class="feature-card">
+            <h3>Knowledge</h3>
+            <p>Use knowledge when you want the agent grounded in trusted material like files, policies, or indexed enterprise content.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Tools</h3>
+            <p>Use tools when the agent needs to call a system, trigger an operation, or retrieve live information from another source.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Best audience phrasing</h3>
+            <p>Tell the audience: knowledge helps the agent know better, tools help the agent do more.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Bridge to exercise</h3>
+            <p>This section tees up the later hands-on exercise where the agent answers questions grounded in files via AI Search.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="dual-panel">
+        <article class="script-card">
+          <p class="section-kicker">Talking points</p>
+          <h2>Speaker bullets</h2>
+          <ul class="bullet-list">
+            <li>Knowledge is about trust and relevance.</li>
+            <li>Tools are about action and integration.</li>
+            <li>A strong agent usually needs both.</li>
+            <li>The later lab uses files in AI Search as a concrete grounding example.</li>
+          </ul>
+        </article>
+        <article class="script-card">
+          <p class="section-kicker">Short script</p>
+          <h2>Presenter-ready wording</h2>
+          <p>Here is where the platform becomes useful in a business setting. If I only give the agent instructions, it is still generic. If I give it knowledge, it becomes grounded in what my organization actually knows. If I give it tools, it can go beyond answering and start interacting with systems. For most real scenarios, you want both of those dimensions.</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Live switch</p>
+            <h2>What to show in the UI</h2>
+          </div>
+        </div>
+        <article class="switch-card">
+          <ul class="plain-list">
+            <li>Open the Tools area and show one preconfigured connection or capability.</li>
+            <li>Open Knowledge and show a prepared source so you are not waiting on indexing live.</li>
+            <li>Return to Playground and ask one question that clearly uses grounding or a tool.</li>
+          </ul>
+        </article>
+      </section>
+
+      <nav class="section-nav">
+        <a class="nav-link" href="../03-agent-creation/index.html">03 Agent creation</a>
+        <a class="nav-link current" href="index.html">04 Knowledge and tools</a>
+        <a class="nav-link" href="../05-guardrails/index.html">05 Guardrails</a>
+      </nav>
+    </main>
+  </div>
+  <script src="../../shared/presentation.js"></script>
+</body>
+</html>

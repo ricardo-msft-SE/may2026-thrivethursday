@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build an Agent</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../../shared/theme.css">
+</head>
+<body data-page="agent-creation">
+  <div class="page-shell">
+    <header class="hero hero-band">
+      <div class="page-header">
+        <div>
+          <a class="back-link" href="../../index.html">&larr; Back to presenter home</a>
+          <p class="eyebrow">Section 03</p>
+          <h1>Build a basic agent live without overexplaining setup</h1>
+        </div>
+        <div class="status-card">
+          <div class="micro-label">Target timing</div>
+          <h2>6 to 8 minutes</h2>
+          <p>Goal: make agent creation feel approachable while keeping momentum high.</p>
+        </div>
+      </div>
+      <p class="lead">This is the first major live moment. Keep the agent simple and use the interface to reinforce that creation is fast.</p>
+    </header>
+
+    <main class="stack">
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Build sequence</p>
+            <h2>Three things to emphasize</h2>
+          </div>
+        </div>
+        <div class="section-grid">
+          <article class="step-card" data-step="01">
+            <h3>Identity</h3>
+            <p>Name the agent and define its role in plain language. Explain that instructions are where you describe what success looks like.</p>
+          </article>
+          <article class="step-card" data-step="02">
+            <h3>Behavior</h3>
+            <p>Keep the initial instructions focused. For a first intro, do not try to model every edge case in the prompt.</p>
+          </article>
+          <article class="step-card" data-step="03">
+            <h3>Immediate test loop</h3>
+            <p>Show that once the agent exists, the team can move directly into the Playground to test its behavior.</p>
+          </article>
+          <article class="step-card" data-step="04">
+            <h3>What not to do</h3>
+            <p>Do not derail into model benchmarking, token settings, or prompt-engineering theory in this section.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="dual-panel">
+        <article class="script-card">
+          <p class="section-kicker">Talking points</p>
+          <h2>Speaker bullets</h2>
+          <ul class="bullet-list">
+            <li>I’m starting with the simplest possible agent because the platform story matters more than prompt sophistication right now.</li>
+            <li>Instructions establish role, scope, and the style of response.</li>
+            <li>The real value appears when we add grounding and tools next.</li>
+          </ul>
+        </article>
+        <article class="script-card">
+          <p class="section-kicker">Short script</p>
+          <h2>Presenter-ready wording</h2>
+          <p>This is the point where people often expect a long setup exercise. Instead, I want you to notice how quickly we can define the basics of an agent: who it is, what job it should do, and how we test it. I am intentionally keeping this first agent simple, because the next step is where it becomes useful: grounding it in knowledge and connecting it to tools.</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Live switch</p>
+            <h2>What to show in the UI</h2>
+          </div>
+        </div>
+        <article class="switch-card">
+          <ul class="plain-list">
+            <li>Open the Agents page and create or edit the demo agent.</li>
+            <li>Point out model selection only briefly. The audience does not need a model deep dive here.</li>
+            <li>Show the instructions pane and explain why concise instructions beat long paragraphs for a first demo.</li>
+            <li>Save, then pivot immediately toward tools and knowledge.</li>
+          </ul>
+        </article>
+      </section>
+
+      <nav class="section-nav">
+        <a class="nav-link" href="../02-mental-model/index.html">02 Mental model</a>
+        <a class="nav-link current" href="index.html">03 Agent creation</a>
+        <a class="nav-link" href="../04-knowledge-tools/index.html">04 Knowledge and tools</a>
+      </nav>
+    </main>
+  </div>
+  <script src="../../shared/presentation.js"></script>
+</body>
+</html>
