@@ -22,18 +22,19 @@ By the end of the lab, you will:
 - Each project already has one pre-deployed model.
 - The class shares one Azure AI Search service.
 - A pre-created storage account exists for document ingestion.
-- Search connection in this lab uses API key.
+- Search connection in this lab uses managed identity and RBAC.
 
 ## What you need before minute 0
 
 Make sure you have the following from the facilitator:
 
 - Your Foundry project name.
-- Azure AI Search endpoint.
 - Azure AI Search index name for this lab.
-- Azure AI Search API key.
 - Storage account container path or upload location details.
 - A small PDF set (2-3 files) for upload.
+- Confirmation that your identity has `Search Index Data Reader` on the shared Search service.
+- Confirmation that your identity has `Storage Blob Data Reader` on the storage container.
+- If you will upload files in-lab, confirmation that your identity has `Storage Blob Data Contributor`.
 
 ## 60-minute agenda
 
@@ -132,7 +133,8 @@ Checkpoint:
 
 If blocked:
 
-- Verify endpoint, index name, and API key with facilitator.
+- Verify index name with facilitator.
+- Verify RBAC assignments with facilitator (`Search Index Data Reader`, `Storage Blob Data Reader`, and `Storage Blob Data Contributor` if uploading).
 - Confirm files are valid PDFs and not encrypted.
 - If indexing is still pending after several minutes, proceed with facilitator-provided fallback indexed files.
 
@@ -143,9 +145,8 @@ If blocked:
 3. Click add/connect knowledge.
 4. Select Azure AI Search.
 5. Enter connection details exactly:
-   - Endpoint: `https://<search-resource>.search.windows.net`
-   - Authentication: API key
-   - API key: provided by facilitator
+   - Search resource: select the shared Azure AI Search resource from the tenant resource picker.
+   - Authentication: managed identity or Microsoft Entra (no key entry).
    - Index name: provided lab index
 6. Test connection if the UI provides a test action.
 7. Save the knowledge connection.
@@ -158,8 +159,9 @@ Checkpoint:
 If blocked:
 
 - Re-check index name spelling.
-- Re-paste API key and retry test.
-- Ensure endpoint uses HTTPS and no extra path suffix.
+- Confirm you are signed in with the expected tenant and account.
+- Confirm your identity has `Search Index Data Reader` on the Search service.
+- Wait a few minutes and retry if role assignments were changed recently.
 
 ### Phase 5: Test in Playground (50:00-58:00)
 
@@ -232,8 +234,10 @@ If you finished early:
 
 ### Problem: Search connection test fails
 
-- Validate endpoint format.
-- Validate API key.
+- Validate sign-in tenant/account.
+- Validate `Search Index Data Reader` assignment.
+- Validate `Storage Blob Data Reader` assignment.
+- If uploading files, validate `Storage Blob Data Contributor` assignment.
 - Validate index name.
 
 ### Problem: No grounded answers in Playground

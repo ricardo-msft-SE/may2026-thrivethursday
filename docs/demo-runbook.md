@@ -24,13 +24,17 @@ Deliver a guided 60-minute hands-on exercise where participants build a new Foun
 - Each project is already connected to a single pre-deployed model.
 - One shared Azure AI Search instance is used by the cohort.
 - One pre-created storage account is used for document ingestion.
-- Authentication to Azure AI Search in the lab uses API key.
+- Authentication to Azure AI Search in the lab uses managed identity and RBAC.
 
 ## Facilitator assignments and controls
 
 - Assign each attendee to one of the 10 pre-created projects before the lab begins.
 - Keep a participant-to-project roster visible so support is fast.
-- Keep a copy of Search endpoint, index name, and API key ready for distribution.
+- Keep a copy of Search resource name and index name ready for distribution.
+- Verify attendee role assignments before start:
+	- `Search Index Data Reader`
+	- `Storage Blob Data Reader`
+	- `Storage Blob Data Contributor` (if participants upload files)
 - Keep a known-good PDF package available for quick re-upload if indexing fails.
 
 ## Pre-demo checklist
@@ -73,8 +77,10 @@ Deliver a guided 60-minute hands-on exercise where participants build a new Foun
 - If model controls are locked or missing, proceed without tuning and continue the lab.
 
 ### Search connection failures
-- Confirm endpoint format: `https://<search-resource>.search.windows.net`.
-- Confirm correct API key is used and not expired.
+- Confirm attendee is signed into the expected tenant/account.
+- Confirm `Search Index Data Reader` is assigned.
+- Confirm `Storage Blob Data Reader` is assigned.
+- Confirm `Storage Blob Data Contributor` is assigned for upload paths.
 - Confirm target index name is exact.
 
 ### Indexing delay during lab
@@ -95,7 +101,7 @@ Deliver a guided 60-minute hands-on exercise where participants build a new Foun
 ## Hands-on facilitation checklist
 
 - Rehearse the full lab against a stopwatch and keep it to 60 minutes.
-- Validate Search endpoint, API key, storage account, and index operations in at least one project.
+- Validate Search resource selection, storage account access, and index operations in at least one project.
 - Confirm all participant checkpoints in `hands-on-lab-foundry-agent.md` are achievable in sequence.
 - Prepare one backup index with known-good documents in case indexing lags.
 - Prepare two helper prompts for participants who finish early.
