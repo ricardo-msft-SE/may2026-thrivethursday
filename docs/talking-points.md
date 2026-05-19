@@ -94,13 +94,13 @@ Move to the exercise setup and explain that the narrow scope is intentional.
 ## 8. Hands-on kickoff script (1 hour)
 
 ### Speaker bullets
-- Everyone has one pre-created Foundry project with one pre-deployed model.
-- We will use one shared Azure AI Search instance and one pre-created storage account.
-- You will complete the full flow: create agent, add instructions, ingest PDFs, connect knowledge, and test.
+- Everyone has one pre-created Foundry project labeled to their login, with one pre-deployed model.
+- We will use one shared pre-created Azure AI Search instance and index with pre-loaded documents.
+- You will complete the full flow: create agent, add instructions, validate indexed content, connect knowledge, and test.
 - We will stop at timed checkpoints so nobody falls behind.
 
 ### Short script
-For the next hour, we are switching from overview into build mode. Each of you has a project ready to go with a model already available. We will move through this as a guided lab, and I will call out checkpoints so you can confirm you are in the right place before we continue. By the end, you will have a working agent grounded in documents you uploaded and indexed.
+For the next hour, we are switching from overview into build mode. Each of you has a project labeled to your login and a model already available. We will move through this as a guided lab, and I will call out checkpoints so you can confirm you are in the right place before we continue. By the end, you will have a working agent grounded in pre-loaded and indexed documents.
 
 ### Live cue
 Open `docs/hands-on-lab-foundry-agent.md`, share the minute-by-minute checkpoints, and have participants confirm project assignment before starting minute 0.

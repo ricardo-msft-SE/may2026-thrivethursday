@@ -6,7 +6,7 @@ Deliver a 30 to 40 minute first-introduction to Microsoft Foundry for a mixed cu
 
 ## Lab objective
 
-Deliver a guided 60-minute hands-on exercise where participants build a new Foundry agent, use the pre-assigned model in their project, create agent instructions, ingest PDFs into Azure AI Search, connect the knowledge source to the agent, and validate grounded responses in Playground.
+Deliver a guided 60-minute hands-on exercise where participants build a new Foundry agent, use the pre-assigned model in their project, create agent instructions, validate pre-loaded Azure AI Search content, connect the knowledge source to the agent, and validate grounded responses in Playground.
 
 ## Recommended sequence
 
@@ -20,22 +20,21 @@ Deliver a guided 60-minute hands-on exercise where participants build a new Foun
 
 ## Hands-on environment model
 
-- 10 pre-created Foundry projects are available for the audience.
+- Foundry projects are pre-created and labeled by participant login names.
 - Each project is already connected to a single pre-deployed model.
-- One shared Azure AI Search instance is used by the cohort.
-- One pre-created storage account is used for document ingestion.
+- One shared pre-created Azure AI Search instance and index are used by the cohort.
+- Lab documents are pre-loaded and indexed before the session starts.
 - Authentication to Azure AI Search in the lab uses managed identity and RBAC.
 
 ## Facilitator assignments and controls
 
-- Assign each attendee to one of the 10 pre-created projects before the lab begins.
+- Verify each attendee is mapped to the project label matching their login before the lab begins.
 - Keep a participant-to-project roster visible so support is fast.
 - Keep a copy of Search resource name and index name ready for distribution.
+- Keep a short list of known validation phrases from pre-loaded documents ready for distribution.
 - Verify attendee role assignments before start:
 	- `Search Index Data Reader`
-	- `Storage Blob Data Reader`
-	- `Storage Blob Data Contributor` (if participants upload files)
-- Keep a known-good PDF package available for quick re-upload if indexing fails.
+- Confirm pre-lab ingestion is complete in the target index before attendees join.
 
 ## Pre-demo checklist
 
@@ -69,7 +68,7 @@ Deliver a guided 60-minute hands-on exercise where participants build a new Foun
 ## Hands-on risk notes
 
 ### Project assignment confusion
-- Call project names out loud before participants begin clicking.
+- Call out the login-to-project labeling pattern before participants begin clicking.
 - Pause at minute 5 and verify every participant sees their project home.
 
 ### Model mismatch
@@ -79,13 +78,11 @@ Deliver a guided 60-minute hands-on exercise where participants build a new Foun
 ### Search connection failures
 - Confirm attendee is signed into the expected tenant/account.
 - Confirm `Search Index Data Reader` is assigned.
-- Confirm `Storage Blob Data Reader` is assigned.
-- Confirm `Storage Blob Data Contributor` is assigned for upload paths.
 - Confirm target index name is exact.
 
 ### Indexing delay during lab
-- Use small PDFs and keep uploads limited to 2-3 files.
-- Insert a timed checkpoint where participants verify documents are searchable before agent testing.
+- Do not perform live ingestion during the lab.
+- Insert a timed checkpoint where participants verify pre-loaded documents are searchable before agent testing.
 
 ### Lab pacing drift
 - Use hard stop checkpoints at 15, 30, 45, and 55 minutes.
@@ -101,7 +98,7 @@ Deliver a guided 60-minute hands-on exercise where participants build a new Foun
 ## Hands-on facilitation checklist
 
 - Rehearse the full lab against a stopwatch and keep it to 60 minutes.
-- Validate Search resource selection, storage account access, and index operations in at least one project.
+- Validate Search resource selection and index access in at least one project.
 - Confirm all participant checkpoints in `hands-on-lab-foundry-agent.md` are achievable in sequence.
-- Prepare one backup index with known-good documents in case indexing lags.
+- Prepare one backup pre-populated index with known-good documents.
 - Prepare two helper prompts for participants who finish early.

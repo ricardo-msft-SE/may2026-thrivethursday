@@ -11,37 +11,33 @@ By the end of the lab, you will:
 1. Create a new Foundry agent in your assigned project.
 2. Use your project's pre-deployed model.
 3. Write practical instructions for your agent.
-4. Upload PDFs for indexing.
-5. Confirm documents are indexed in Azure AI Search.
+4. Validate pre-loaded documents in Azure AI Search.
 6. Add Azure AI Search as agent knowledge.
 7. Test and validate grounded responses in Playground.
 
 ## Environment assumptions
 
-- You were assigned one of 10 pre-created Foundry projects.
+- Foundry projects are pre-created and labeled with participant login names.
 - Each project already has one pre-deployed model.
-- The class shares one Azure AI Search service.
-- A pre-created storage account exists for document ingestion.
+- The class shares one pre-created Azure AI Search service and index.
+- Lab documents are already uploaded and indexed before the session starts.
 - Search connection in this lab uses managed identity and RBAC.
 
 ## What you need before minute 0
 
 Make sure you have the following from the facilitator:
 
-- Your Foundry project name.
+- Your assigned Foundry project name (matching your login label).
 - Azure AI Search index name for this lab.
-- Storage account container path or upload location details.
-- A small PDF set (2-3 files) for upload.
+- The list of pre-loaded document names (or sample phrases) already in the index.
 - Confirmation that your identity has `Search Index Data Reader` on the shared Search service.
-- Confirmation that your identity has `Storage Blob Data Reader` on the storage container.
-- If you will upload files in-lab, confirmation that your identity has `Storage Blob Data Contributor`.
 
 ## 60-minute agenda
 
 - 00:00-05:00: Verify access and locate assigned project.
 - 05:00-15:00: Create agent and confirm model.
 - 15:00-25:00: Write and save instructions.
-- 25:00-40:00: Upload PDFs and verify indexing.
+- 25:00-40:00: Validate pre-indexed document content.
 - 40:00-50:00: Connect Azure AI Search as knowledge.
 - 50:00-58:00: Test in Playground.
 - 58:00-60:00: Completion check and recap.
@@ -51,7 +47,7 @@ Make sure you have the following from the facilitator:
 ### Phase 0: Verify access and project assignment (00:00-05:00)
 
 1. Open the Foundry portal and sign in.
-2. From your project list, open your assigned project.
+2. From your project list, open the project labeled with your login name.
 3. Confirm left navigation shows at least: Agents, Models, Knowledge, Data, and Guardrails.
 4. Keep this lab document open in a separate window or side-by-side tab.
 
@@ -61,7 +57,7 @@ Checkpoint:
 
 If blocked:
 
-- Ask facilitator to confirm you were assigned the correct project name.
+- Ask facilitator to confirm the project label mapped to your login.
 - Refresh the page and re-open the project from the projects list.
 
 ### Phase 1: Create a new agent and confirm model (05:00-15:00)
@@ -112,31 +108,29 @@ If blocked:
 - Try saving shorter text first, then paste full version.
 - Hard refresh and retry save.
 
-### Phase 3: Upload PDFs and verify indexing (25:00-40:00)
+### Phase 3: Validate pre-indexed content (25:00-40:00)
 
-1. Open Data or the document-ingestion area configured by your facilitator.
-2. Choose the provided storage-backed upload flow.
-3. Upload 2-3 PDFs from the lab package.
-4. Confirm each file shows upload success.
-5. Start or confirm indexing for the target Azure AI Search index.
-6. Wait for indexing status to show completion or ready state.
-7. Validate indexing by searching a known phrase from one uploaded PDF in Search validation UI (or query preview if available).
+1. Open the Search validation UI (or query preview) available in your environment.
+2. Use the provided target Azure AI Search index.
+3. Search for a known phrase from the pre-loaded lab documents.
+4. Repeat with one additional phrase from a different document.
+5. Confirm both queries return expected content snippets.
 
 Suggested validation phrases:
 
-- A policy title from your PDF.
-- A unique heading or section phrase.
+- A policy title from one of the pre-loaded documents.
+- A unique heading or section phrase from a second document.
 
 Checkpoint:
 
-- At least one uploaded document is discoverable in the target index.
+- Pre-loaded documents are discoverable in the target index.
 
 If blocked:
 
 - Verify index name with facilitator.
-- Verify RBAC assignments with facilitator (`Search Index Data Reader`, `Storage Blob Data Reader`, and `Storage Blob Data Contributor` if uploading).
-- Confirm files are valid PDFs and not encrypted.
-- If indexing is still pending after several minutes, proceed with facilitator-provided fallback indexed files.
+- Verify RBAC assignment with facilitator (`Search Index Data Reader`).
+- Ask facilitator to confirm the pre-lab ingestion completed for your assigned index.
+- If queries return no matches, switch to facilitator-provided validation phrases.
 
 ### Phase 4: Add Azure AI Search as knowledge (40:00-50:00)
 
@@ -147,7 +141,7 @@ If blocked:
 5. Enter connection details exactly:
    - Search resource: select the shared Azure AI Search resource from the tenant resource picker.
    - Authentication: managed identity or Microsoft Entra (no key entry).
-   - Index name: provided lab index
+   - Index name: provided pre-created lab index
 6. Test connection if the UI provides a test action.
 7. Save the knowledge connection.
 8. Verify the knowledge source appears as active/connected on the agent.
@@ -179,12 +173,12 @@ Expected:
 3. Run prompt B (grounded knowledge check):
 
 ```text
-Summarize the key policy points from the uploaded documents.
+Summarize the key policy points from the pre-loaded lab documents.
 ```
 
 Expected:
 
-- Response references indexed content and stays aligned to uploaded PDFs.
+- Response references indexed content and stays aligned to the pre-loaded documents.
 
 4. Run prompt C (out-of-scope check):
 
@@ -209,8 +203,7 @@ Complete this checklist:
 - Agent created.
 - Model confirmed.
 - Instructions saved.
-- PDFs uploaded.
-- Index contains uploaded content.
+- Pre-indexed content validated.
 - Knowledge source connected.
 - Playground tests completed.
 
@@ -236,15 +229,13 @@ If you finished early:
 
 - Validate sign-in tenant/account.
 - Validate `Search Index Data Reader` assignment.
-- Validate `Storage Blob Data Reader` assignment.
-- If uploading files, validate `Storage Blob Data Contributor` assignment.
 - Validate index name.
 
 ### Problem: No grounded answers in Playground
 
-- Confirm index actually has searchable content.
+- Confirm the pre-created index has searchable content.
 - Confirm knowledge source is attached to this specific agent.
-- Re-run with a phrase known to exist in uploaded documents.
+- Re-run with a phrase known to exist in pre-loaded documents.
 
 ## Facilitator checkpoint calls (for live delivery)
 
